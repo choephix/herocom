@@ -1,7 +1,14 @@
 import * as GUI from 'dat.gui'
 import * as TWEEN from 'tweeno'
-import * as THREE from 'three'
 import { GridBody, UnitBody } from './madels'
+
+//import * as THREE from 'three'
+//window.THREE = THREE
+//import FBXLoader from 'three/examples/js/loaders/FBXLoader'
+var THREE = window.THREE = require('three');
+require('three/examples/js/loaders/FBXLoader')
+
+
 
 console.log( TWEEN )
 
@@ -19,6 +26,33 @@ var light = new THREE.DirectionalLight( 0xffffff, 0.5 )
 light.position.set( 1, 1, 1 ).normalize()
 scene.add( light )
 scene.add( new THREE.AmbientLight( 0xffffff, 0.7 ) )
+
+
+
+
+
+let loader = new THREE.FBXLoader()
+
+loader.load( 'assets/chars/xbot.fbx', function ( o ) {
+
+	scene.add( o.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
+
+
+
+
+
+
+
+
+
+
+
 
 var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 500 )
 camera.position.set( 0, 25, 50 )
