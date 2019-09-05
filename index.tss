@@ -1,6 +1,10 @@
+/* global window document */
+
 import * as GUI from 'dat.gui'
 import * as TWEEN from 'tweeno'
 import { GridBody, UnitBody } from './madels'
+
+
 
 //import * as THREE from 'three'
 //window.THREE = THREE
