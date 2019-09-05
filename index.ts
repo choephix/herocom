@@ -44,7 +44,7 @@ loader.load( 'assets/chars/xbot.fbx', function ( o ) {
 } );
 
 
-
+return
 
 
 
