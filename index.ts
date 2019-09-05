@@ -10,8 +10,6 @@ require('three/examples/js/loaders/FBXLoader')
 
 
 
-console.log( TWEEN )
-
 var renderer = new THREE.WebGLRenderer()
 renderer.setSize( window.innerWidth, window.innerHeight )
 document.body.appendChild( renderer.domElement )
@@ -27,14 +25,15 @@ light.position.set( 1, 1, 1 ).normalize()
 scene.add( light )
 scene.add( new THREE.AmbientLight( 0xffffff, 0.7 ) )
 
-
-
-
+var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 500 )
+camera.position.set( 0, 25, 50 )
+camera.lookAt( 0, 0, 0 )
 
 let loader = new THREE.FBXLoader()
 
-loader.load( 'assets/chars/xbot.fbx', function ( o ) {
+loader.load( 'https://github.com/nxhoang/Three.js-Fxb-and-Textures/blob/master/models/fbx/Test.fbx?raw=true', function ( o ) {
 
+  console.log(o)
 	scene.add( o.scene );
 
 }, undefined, function ( error ) {
@@ -42,7 +41,6 @@ loader.load( 'assets/chars/xbot.fbx', function ( o ) {
 	console.error( error );
 
 } );
-
 
 return
 
@@ -54,9 +52,6 @@ return
 
 
 
-var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 500 )
-camera.position.set( 0, 25, 50 )
-camera.lookAt( 0, 0, 0 )
 
 const GRIDX = 25, GRIDY = 25
 var grid = new GridBody( GRIDX, GRIDY, 4 )
