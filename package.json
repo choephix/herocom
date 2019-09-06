@@ -5,6 +5,7 @@
   "dependencies": {
     "dat.gui": "^0.7.6",
     "three": "0.107.0",
-    "tweeno": "^1.1.3"
+    "tweeno": "^1.1.3",
+    "zlibjs": "^0.3.1"
   }
 }

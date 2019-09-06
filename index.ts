@@ -31,7 +31,8 @@ camera.lookAt( 0, 0, 0 )
 
 let loader = new THREE.FBXLoader()
 
-loader.load( 'https://github.com/nxhoang/Three.js-Fxb-and-Textures/blob/master/models/fbx/Test.fbx?raw=true', function ( o ) {
+
+loader.load( 'https://raw.githubusercontent.com/nxhoang/Three.js-Fxb-and-Textures/master/models/fbx/Test.fbx?raw=true', function ( o ) {
 
   console.log(o)
 	scene.add( o.scene );
