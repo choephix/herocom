@@ -6,7 +6,6 @@ import { GridBody, UnitBody } from './madels'
 //window.THREE = THREE
 //import FBXLoader from 'three/examples/js/loaders/FBXLoader'
 var THREE = window.THREE = require('three');
-require('three/examples/js/loaders/FBXLoader')
 
 
 
@@ -28,31 +27,6 @@ scene.add( new THREE.AmbientLight( 0xffffff, 0.7 ) )
 var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 500 )
 camera.position.set( 0, 25, 50 )
 camera.lookAt( 0, 0, 0 )
-
-let loader = new THREE.FBXLoader()
-
-
-loader.load( 'https://raw.githubusercontent.com/nxhoang/Three.js-Fxb-and-Textures/master/models/fbx/Test.fbx?raw=true', function ( o ) {
-
-  console.log(o)
-	scene.add( o.scene );
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
-
-return
-
-
-
-
-
-
-
-
-
 
 const GRIDX = 25, GRIDY = 25
 var grid = new GridBody( GRIDX, GRIDY, 4 )
